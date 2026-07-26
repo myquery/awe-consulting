@@ -177,7 +177,7 @@ export default function HomePage() {
                 <div className="hero-orbit" aria-hidden="true" />
                 <div className="hero-logo-panel">
                   <Image
-                    src="/assets/img/logo.jpeg"
+                    src="/assets/img/awe-consulting-logo.png"
                     width={1122}
                     height={272}
                     alt="AWE Consulting, AbrahamArcade Wholeness Enterprise brand mark"

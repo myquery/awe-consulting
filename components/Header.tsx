@@ -44,9 +44,9 @@ export function Header() {
             onClick={() => setIsOpen(false)}
           >
             <Image
-              src="/assets/img/logo.jpeg"
-              width={238}
-              height={58}
+              src="/assets/img/awe-consulting-logo.png"
+              width={360}
+              height={87}
               alt="AWE Consulting, AbrahamArcade Wholeness Enterprise logo"
               priority
             />

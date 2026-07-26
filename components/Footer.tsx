@@ -18,9 +18,9 @@ export function Footer() {
           <div className="col-lg-5">
             <Image
               className="footer-logo"
-              src="/assets/img/logo.jpeg"
-              width={220}
-              height={53}
+              src="/assets/img/awe-consulting-logo.png"
+              width={380}
+              height={92}
               alt="AWE Consulting, AbrahamArcade Wholeness Enterprise logo"
             />
             <p className="mt-3 mb-1">
