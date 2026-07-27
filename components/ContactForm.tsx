@@ -56,7 +56,7 @@ export function ContactForm() {
       <div className="row g-3">
         <div className="col-md-6">
           <label htmlFor="name" className="form-label">
-            Name
+            Full name
           </label>
           <input
             type="text"
@@ -64,27 +64,29 @@ export function ContactForm() {
             id="name"
             name="name"
             autoComplete="name"
+            placeholder="Your name"
             required
           />
           <div className="invalid-feedback">Enter your name.</div>
         </div>
         <div className="col-md-6">
           <label htmlFor="organization" className="form-label">
-            Organization
+            Institution
           </label>
           <input
             type="text"
             className="form-control"
             id="organization"
-            name="organization"
+            name="institution"
             autoComplete="organization"
+            placeholder="Your institution"
             required
           />
-          <div className="invalid-feedback">Enter your organization.</div>
+          <div className="invalid-feedback">Enter your institution.</div>
         </div>
-        <div className="col-md-6">
+        <div className="col-12">
           <label htmlFor="email" className="form-label">
-            Work email
+            Email
           </label>
           <input
             type="email"
@@ -92,76 +94,31 @@ export function ContactForm() {
             id="email"
             name="email"
             autoComplete="email"
+            placeholder="name@institution.edu"
             required
           />
-          <div className="invalid-feedback">Enter a valid work email.</div>
-        </div>
-        <div className="col-md-6">
-          <label htmlFor="phone" className="form-label">
-            Phone
-          </label>
-          <input
-            type="tel"
-            className="form-control"
-            id="phone"
-            name="phone"
-            autoComplete="tel"
-          />
+          <div className="invalid-feedback">Enter a valid email.</div>
         </div>
         <div className="col-12">
           <label htmlFor="interest" className="form-label">
-            Partnership interest
+            Inquiry type
           </label>
           <select
             className="form-select"
             id="interest"
-            name="interest"
+            name="type"
             required
-            defaultValue=""
+            defaultValue="Institutional partnership"
           >
-            <option value="">Select an option</option>
-            <option>University or research institute program</option>
-            <option>Industry or CSR partnership</option>
-            <option>Diaspora expert participation</option>
-            <option>Development agency or foundation collaboration</option>
-            <option>Other institutional inquiry</option>
+            <option>Institutional partnership</option>
+            <option>Expert consultation</option>
+            <option>Graduate research development</option>
+            <option>Pilot programme</option>
           </select>
-          <div className="invalid-feedback">
-            Choose the closest partnership interest.
-          </div>
-        </div>
-        <div className="col-12">
-          <label htmlFor="message" className="form-label">
-            Message
-          </label>
-          <textarea
-            className="form-control"
-            id="message"
-            name="message"
-            rows={5}
-            required
-          />
-          <div className="invalid-feedback">Share a brief message.</div>
-        </div>
-        <div className="col-12">
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              value="yes"
-              id="consent"
-              name="consent"
-              required
-            />
-            <label className="form-check-label" htmlFor="consent">
-              I consent to being contacted about this inquiry.
-            </label>
-            <div className="invalid-feedback">Consent is required.</div>
-          </div>
         </div>
         <div className="col-12">
           <button type="submit" className="btn btn-primary btn-lg">
-            Prepare Inquiry
+            Submit inquiry
           </button>
           <p
             className={`form-status mt-3 mb-0 ${statusClass}`.trim()}

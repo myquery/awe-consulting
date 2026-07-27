@@ -7,12 +7,12 @@ import "./globals.css";
 const siteUrl = "https://www.example.com";
 const siteName = "AbrahamArcade Wholeness Enterprise LLC";
 const siteDescription =
-  "AbrahamArcade Wholeness Enterprise LLC develops practical STEM knowledge-transfer, graduate research and cultural exchange programs for institutions serving Nigeria and West Africa.";
+  "AWE Consulting coordinates STEM knowledge transfer, graduate research development, institutional partnerships and cultural exchange across Nigeria and West Africa.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} | Global STEM Knowledge Transfer`,
+    default: "AWE Consulting | STEM Knowledge Transfer in West Africa",
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
@@ -20,9 +20,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: siteName,
-    description:
-      "Global STEM knowledge transfer, graduate research development and cultural exchange consulting.",
+    title: "AWE Consulting | STEM Knowledge Transfer in West Africa",
+    description: siteDescription,
     type: "website",
     url: siteUrl,
     siteName,
@@ -57,7 +56,7 @@ const structuredData = {
       url: `${siteUrl}/`,
       logo: `${siteUrl}/assets/img/logo.jpeg`,
       description:
-        "Educational, technological and cultural exchange consulting for STEM knowledge transfer and graduate research development.",
+        "AWE Consulting coordinates STEM knowledge transfer, graduate research development, institutional partnerships and cultural exchange across Nigeria and West Africa.",
     },
     {
       "@type": "ProfessionalService",
@@ -81,6 +80,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"

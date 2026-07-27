@@ -3,50 +3,35 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRightIcon } from "@/components/HeroIcons";
 
 const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "Programs", href: "/#programs" },
-  { label: "Who We Serve", href: "/#who-we-serve" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Programmes", href: "/#programs" },
+  { label: "Who we serve", href: "/#who-we-serve" },
+  { label: "Process", href: "/#how-it-works" },
+  { label: "Outcomes", href: "/#outcomes" },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header id="home">
-      <div className="top-bar" aria-label="Contact information">
-        <div className="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2">
-          <p className="mb-0">
-            Educational, Technological and Cultural Exchange Consulting
-          </p>
-          <div className="top-bar__links d-flex flex-wrap gap-3">
-            <a href="mailto:partnerships@example.com">
-              partnerships@example.com
-            </a>
-            <a href="tel:+10000000000">+1 (000) 000-0000</a>
-          </div>
-        </div>
-      </div>
-
+    <header id="home" className="site-header">
       <nav
-        className="navbar navbar-expand-lg sticky-top bg-white border-bottom"
+        className="navbar navbar-expand-xl bg-white"
         aria-label="Primary navigation"
       >
         <div className="container">
           <Link
-            className="navbar-brand d-flex align-items-center"
+            className="navbar-brand brand-link d-flex align-items-center"
             href="/#home"
             onClick={() => setIsOpen(false)}
+            aria-label="AWE Consulting home"
           >
             <Image
+              className="site-logo"
               src="/assets/img/awe-consulting-logo.png"
-              width={360}
-              height={87}
+              width={1513}
+              height={293}
               alt="AWE Consulting, AbrahamArcade Wholeness Enterprise logo"
               priority
             />
@@ -83,8 +68,7 @@ export function Header() {
               href="/#contact"
               onClick={() => setIsOpen(false)}
             >
-              Discuss a Partnership
-              <ArrowRightIcon className="icon-sm" />
+              Contact
             </Link>
           </div>
         </div>
