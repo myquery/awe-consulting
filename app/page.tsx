@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
-import {
-  ArrowRightIcon,
-  BookOpenIcon,
-  CheckCircleIcon,
-  SparklesIcon,
-} from "@/components/HeroIcons";
 
 type Program = {
+  title: string;
+  description: string;
+};
+
+type Audience = {
   title: string;
   description: string;
 };
@@ -18,120 +17,129 @@ type ProcessStep = {
   description: string;
 };
 
+type Outcome = {
+  title: string;
+  description: string;
+};
+
 const programs: Program[] = [
   {
-    title: "Expert Masterclass Series",
+    title: "STEM Knowledge Transfer",
     description:
-      "Focused sessions led by diaspora and global STEM experts, with reading prompts, applied discussion and moderated Q&A.",
+      "Moving laboratory practice, technical methodology and teaching standards from global centres of excellence into regional faculties.",
   },
   {
-    title: "Research Acceleration Clinics",
+    title: "Graduate Research Development",
     description:
-      "Small-group support for research questions, methods, proposal clarity, literature positioning and publication readiness.",
+      "Building research capacity through structured mentorship, supervision frameworks and international exchange.",
   },
   {
-    title: "Applied Technology Labs",
+    title: "Institutional Partnerships",
     description:
-      "Hands-on labs that translate technical concepts into reproducible workflows, prototypes, datasets or field-ready tools.",
+      "Harmonising curricula and research standards, and mediating durable partnership frameworks between institutions.",
   },
   {
-    title: "Mentoring and Office Hours",
+    title: "Cultural Exchange",
     description:
-      "Structured access to mentors for participant questions, project direction, professional development and next-step planning.",
-  },
-  {
-    title: "Innovation and Commercialization",
-    description:
-      "Guidance on problem framing, stakeholder discovery, responsible technology transfer and pathways from research to use.",
-  },
-  {
-    title: "Cultural and Institutional Exchange",
-    description:
-      "Preparation and facilitation that helps international experts, host institutions and participants work across context with respect.",
-  },
-  {
-    title: "Train-the-Trainer",
-    description:
-      "Faculty and facilitator development designed to help partner institutions continue delivery after the initial cohort.",
+      "Enabling effective collaboration through rigorous cultural preparation and local context integration.",
   },
 ];
 
-const partnerInstitutions = [
-  "Universities and graduate schools",
-  "Research institutes and centers",
-  "Technology companies and industry groups",
-  "Professional associations and foundations",
-  "Embassies, development agencies and CSR teams",
-  "Diaspora STEM experts and expert networks",
+const audiences: Audience[] = [
+  {
+    title: "Universities",
+    description:
+      "Curriculum reform, faculty development and stronger research supervision at the tertiary level.",
+  },
+  {
+    title: "Research Institutes",
+    description:
+      "Laboratory capability, grant strategy and publication readiness for technical teams.",
+  },
+  {
+    title: "Development Agencies",
+    description:
+      "Educational programming designed for measurable, reportable human capital outcomes.",
+  },
+  {
+    title: "Corporations",
+    description:
+      "Talent pipelines, applied research collaborations and regional technical partnerships.",
+  },
+  {
+    title: "International Partners",
+    description:
+      "Trusted local coordination for institutions entering the West African ecosystem.",
+  },
+  {
+    title: "Government Bodies",
+    description:
+      "Policy-aligned STEM capacity programmes at state and federal level.",
+  },
 ];
 
-const participantGroups = [
-  "Master's and PhD students in STEM fields",
-  "Early-career researchers building rigorous methods",
-  "Selected faculty seeking applied program models",
-  "Research teams preparing outputs, proposals or collaborations",
-  "Institutions in Nigeria and West Africa developing local capacity",
+const trustItems = [
+  "Universities",
+  "Research institutes",
+  "Development agencies",
+  "Corporations",
+  "International partners",
 ];
 
 const processSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "Discover",
+    title: "Contextual Audit",
     description:
-      "Clarify institutional needs, participant profile, available experts, delivery constraints and evidence priorities.",
+      "Assessment of institutional strengths, infrastructure gaps and the regulatory environment in the target region.",
   },
   {
     number: "02",
-    title: "Co-Design",
+    title: "Expert Matching",
     description:
-      "Shape the curriculum, expert roster, participant tasks, schedule and support model with partner input.",
+      "Identification and engagement of global subject specialists with the precise disciplinary and pedagogical expertise required.",
   },
   {
     number: "03",
-    title: "Deliver",
+    title: "Framework Deployment",
     description:
-      "Coordinate live sessions, hybrid workshops, facilitation, mentor access and practical assignments.",
+      "Delivery of the knowledge transfer programme against defined qualitative and quantitative milestones.",
   },
   {
     number: "04",
-    title: "Demonstrate",
+    title: "Handover & Retention",
     description:
-      "Help participants present research progress, applied artifacts, prototypes or next-step plans.",
-  },
-  {
-    number: "05",
-    title: "Evaluate & Scale",
-    description:
-      "Report evidence-ready outcomes and identify what should be repeated, adapted or expanded.",
+      "Transfer of ownership to local faculty, with monitoring so capability remains after the engagement ends.",
   },
 ];
 
-const pilotWeeks = [
-  {
-    range: "Weeks 1-2",
-    description: "Orientation, needs assessment and research-goal alignment.",
-  },
-  {
-    range: "Weeks 3-6",
-    description: "Masterclasses, research clinics and applied technical labs.",
-  },
-  {
-    range: "Weeks 7-10",
-    description: "Mentor office hours, group work and draft output development.",
-  },
-  {
-    range: "Weeks 11-12",
-    description:
-      "Participant demonstrations, feedback and evidence-ready reporting.",
-  },
+const pilotBullets = [
+  "Scoped to one faculty, department or research theme",
+  "Matched visiting expertise and local counterpart leads",
+  "Agreed milestones, review points and handover plan",
 ];
 
-const outcomes = [
-  "Participant completion",
-  "Knowledge gain",
-  "Applied outputs",
-  "Mentor engagement",
-  "Follow-on collaborations",
+const outcomes: Outcome[] = [
+  {
+    title: "Stronger research supervision",
+    description:
+      "Faculty gain current methodology, review practice and publication standards they can apply independently.",
+  },
+  {
+    title: "Durable institutional links",
+    description:
+      "Relationships are formalised so collaboration continues beyond any single visit or project cycle.",
+  },
+  {
+    title: "Better prepared graduates",
+    description:
+      "Research students work to internationally recognised expectations from the start of their programme.",
+  },
+  {
+    title: "Retained local capability",
+    description:
+      "Knowledge stays in the institution through documented practice, local leads and structured handover.",
+  },
 ];
 
 export default function HomePage() {
@@ -140,59 +148,43 @@ export default function HomePage() {
       <section className="hero section-padding">
         <div className="container">
           <div className="row align-items-center g-5">
-            <div className="col-lg-7">
-              <p className="hero-badge">
-                <SparklesIcon className="hero-badge__icon" />
-                Practical exchange for researchers
-              </p>
-              <p className="eyebrow">
-                Global STEM Knowledge Transfer, Graduate Research Development &
-                Cultural Exchange
-              </p>
+            <div className="col-lg-6">
+              <p className="eyebrow">Global STEM Knowledge Transfer</p>
               <h1>
-                Connecting <span>Global STEM Expertise</span> with
-                Africa&apos;s Next Generation of Researchers.
+                Bridging Global <span>Academic Capital</span>
               </h1>
               <p className="hero__copy">
-                AbrahamArcade Wholeness Enterprise LLC helps institutions
-                co-design practical knowledge-transfer programs for
-                master&apos;s and PhD students, early-career researchers and
-                selected faculty in Nigeria and West Africa.
+                AWE Consulting coordinates STEM knowledge transfer, graduate
+                research development, institutional partnerships and cultural
+                exchange between global experts and institutions in Nigeria and
+                West Africa.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3 mt-4">
                 <a className="btn btn-primary btn-lg" href="#contact">
-                  Discuss a Partnership <ArrowRightIcon className="icon-sm" />
+                  Start a conversation
                 </a>
-                <a className="btn btn-outline-light btn-lg" href="#programs">
-                  Explore Programs
+                <a className="btn btn-outline-dark btn-lg" href="#programs">
+                  Explore programmes
                 </a>
               </div>
             </div>
-            <div className="col-lg-5">
+            <div className="col-lg-6">
               <div
                 className="hero-visual"
                 aria-label="AbrahamArcade Wholeness Enterprise brand"
               >
-                <div className="hero-dots" aria-hidden="true" />
-                <div className="hero-orbit" aria-hidden="true" />
-                <div className="hero-logo-panel">
-                  <Image
-                    src="/assets/img/awe-consulting-logo.png"
-                    width={1122}
-                    height={272}
-                    alt="AWE Consulting, AbrahamArcade Wholeness Enterprise brand mark"
-                    priority
-                  />
-                </div>
+                <Image
+                  className="hero-photo"
+                  src="/assets/img/lovable-campus.jpg"
+                  width={1200}
+                  height={1408}
+                  alt="Aerial view of a university research campus in Lagos, Nigeria"
+                  priority
+                />
                 <div className="hero-feature-card">
-                  <div className="feature-icon" aria-hidden="true">
-                    <BookOpenIcon className="icon-md" />
-                  </div>
-                  <h2 className="h4">Hybrid STEM Knowledge Transfer</h2>
-                  <div className="hero-card-line" aria-hidden="true" />
                   <p>
-                    Expert coordination, cohort delivery, cultural orientation
-                    and impact reporting for research-centered exchange.
+                    Institutional capacity building for universities and
+                    research centres across Nigeria and West Africa.
                   </p>
                 </div>
               </div>
@@ -203,34 +195,33 @@ export default function HomePage() {
 
       <section className="trust-strip" aria-label="Institutional focus">
         <div className="container">
+          <h2 className="trust-heading">Built for institutional collaboration</h2>
           <div className="trust-panel">
-            <span>Universities</span>
-            <span>Research Institutions</span>
-            <span>Industry Partners</span>
-            <span>Development Organizations</span>
+            {trustItems.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="programs" className="section-padding">
+      <section id="programs" className="section-padding section-tint">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Program Pillars</p>
-            <h2>
-              Practical formats for research capability and two-way exchange.
-            </h2>
+            <h2>Programme Pillars</h2>
             <p>
-              Each program is scoped with institutional partners, subject-matter
-              experts and local delivery teams so participants can move from
-              concepts to applied outputs.
+              Four connected areas of work that together move expertise, people
+              and standards between global institutions and the region.
             </p>
           </div>
 
-          <div className="row g-4">
-            {programs.map((program) => (
-              <div className="col-md-6 col-xl-4" key={program.title}>
+          <div className="program-grid">
+            {programs.map((program, index) => (
+              <div className="program-grid__item" key={program.title}>
                 <article className="card program-card h-100">
                   <div className="card-body">
+                    <span className="program-card__number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                     <h3 className="h5">{program.title}</h3>
                     <p>{program.description}</p>
                   </div>
@@ -244,18 +235,19 @@ export default function HomePage() {
       <section id="who-we-serve" className="section-padding section-tint">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Who We Serve</p>
-            <h2>
-              Built for institutions and participants who need applied, credible
-              exchange.
-            </h2>
+            <h2>Who We Serve</h2>
+            <p>
+              We work with the institutions shaping scientific capability in
+              Nigeria and the wider region.
+            </p>
           </div>
-          <div className="row g-4">
-            <AudienceList
-              title="Partner institutions"
-              items={partnerInstitutions}
-            />
-            <AudienceList title="Participant groups" items={participantGroups} />
+          <div className="audience-grid">
+            {audiences.map((audience) => (
+              <article className="audience-item" key={audience.title}>
+                <h3>{audience.title}</h3>
+                <p>{audience.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -263,11 +255,11 @@ export default function HomePage() {
       <section id="how-it-works" className="section-padding">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">How It Works</p>
-            <h2>
-              A clear path from partnership goals to measurable learning
-              outputs.
-            </h2>
+            <h2>Delivery Process</h2>
+            <p>
+              A rigorous, evidence-led approach to institutional capacity
+              building that prioritises sustainability and local ownership.
+            </p>
           </div>
           <div className="process-grid">
             {processSteps.map((step) => (
@@ -281,35 +273,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-padding section-tint">
+      <section className="section-padding pilot-section">
         <div className="container">
-          <div className="row align-items-start g-5">
-            <div className="col-lg-5">
-              <p className="eyebrow">Configurable Model</p>
-              <h2>Featured pilot program</h2>
-              <p className="lead">
-                A sample 8-12 week hybrid STEM knowledge-transfer cohort for
-                graduate researchers.
-              </p>
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6">
+              <p className="eyebrow">Pilot Programme</p>
+              <h2>
+                A structured first <span>engagement</span>
+              </h2>
               <p>
-                This is a configurable model, not a completed case study. The
-                structure can be adapted by discipline, partner goals,
-                participant level and expert availability.
+                Institutions can begin with a defined pilot: a single
+                department, a single research theme, and an agreed set of
+                milestones. The pilot establishes the working relationship,
+                tests the delivery framework in your context and produces a
+                documented plan for wider rollout.
               </p>
-            </div>
-            <div className="col-lg-7">
-              <div
-                className="pilot-table"
-                role="list"
-                aria-label="Pilot program components"
-              >
-                {pilotWeeks.map((week) => (
-                  <div role="listitem" key={week.range}>
-                    <strong>{week.range}</strong>
-                    <span>{week.description}</span>
-                  </div>
+              <ul className="pilot-list">
+                {pilotBullets.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
-              </div>
+              </ul>
+              <a className="btn btn-dark btn-lg" href="#contact">
+                Discuss a pilot
+              </a>
+            </div>
+            <div className="col-lg-6">
+              <Image
+                className="pilot-image"
+                src="/assets/img/lovable-lab.jpg"
+                width={1200}
+                height={912}
+                alt="Postgraduate researchers working with a visiting professor in a university laboratory"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -318,19 +314,18 @@ export default function HomePage() {
       <section id="outcomes" className="section-padding">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Outcomes</p>
-            <h2>Evidence-ready measures for every cohort.</h2>
+            <h2>Outcomes</h2>
             <p>
-              Final metrics should be confirmed with partner institutions and
-              reported transparently after delivery.
+              What partner institutions should expect from a completed AWE
+              engagement.
             </p>
           </div>
-          <div className="row g-4">
+          <div className="outcome-grid">
             {outcomes.map((outcome) => (
-              <div className="col-sm-6 col-lg" key={outcome}>
+              <div className="outcome-grid__item" key={outcome.title}>
                 <div className="metric-card">
-                  <span>Placeholder</span>
-                  <strong>{outcome}</strong>
+                  <strong>{outcome.title}</strong>
+                  <p>{outcome.description}</p>
                 </div>
               </div>
             ))}
@@ -338,65 +333,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="section-padding section-tint">
-        <div className="container">
-          <div className="row g-5 align-items-start">
-            <div className="col-lg-5">
-              <p className="eyebrow">About</p>
-              <h2>
-                Program-development support for institutions that want exchange
-                to become useful work.
-              </h2>
-            </div>
-            <div className="col-lg-7">
-              <p>
-                AbrahamArcade Wholeness Enterprise LLC is a program-development
-                and consulting organization coordinating expert partnerships,
-                local delivery, cultural orientation, administration and impact
-                reporting.
-              </p>
-              <p>
-                Its work is designed to help partner institutions connect
-                credible STEM expertise with graduate researchers and faculty in
-                ways that respect local context, strengthen applied capability
-                and create practical outputs that can be reviewed after each
-                cohort.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="cta-band" aria-label="Partnership call to action">
-        <div className="container d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
-          <div>
-            <p className="eyebrow mb-2">Partnerships</p>
-            <h2 className="h3 mb-0">
-              Co-design a STEM knowledge-transfer cohort for your institution.
-            </h2>
-          </div>
-          <a className="btn btn-light btn-lg" href="#contact">
-            Start the Conversation
-          </a>
-        </div>
-      </section>
-
-      <section id="contact" className="section-padding">
+      <section id="contact" className="section-padding contact-section">
         <div className="container">
           <div className="row g-5">
             <div className="col-lg-5">
-              <p className="eyebrow">Contact</p>
-              <h2>Discuss a partnership.</h2>
+              <h2>
+                Establish your <span>global footprint</span>
+              </h2>
               <p>
-                Share the institutional goal, participant group and program
-                format you have in mind. Connect a secure form endpoint before
-                public launch.
+                Tell us about your institution and the capability you want to
+                build. We will respond with a proposed scope and next steps.
               </p>
-              <div className="contact-list">
-                <a href="mailto:partnerships@example.com">
-                  partnerships@example.com
+              <div className="contact-list"><span>6439 Union CE, Glen Burnie MD, 21061, USA</span>
+                <a href="mailto:partnerships@awe-consulting.org">
+                  partnerships@awe-consulting.org
                 </a>
-                <a href="tel:+10000000000">+1 (000) 000-0000</a>
+                <span>Lagos, Nigeria | London, UK</span>
               </div>
             </div>
             <div className="col-lg-7">
@@ -406,23 +358,5 @@ export default function HomePage() {
         </div>
       </section>
     </main>
-  );
-}
-
-function AudienceList({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div className="col-lg-6">
-      <div className="service-block">
-        <h3 className="h4">{title}</h3>
-        <ul className="check-list">
-          {items.map((item) => (
-            <li key={item}>
-              <CheckCircleIcon className="check-icon" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
   );
 }
