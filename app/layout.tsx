@@ -7,7 +7,7 @@ import "./globals.css";
 const siteUrl = "https://www.example.com";
 const siteName = "AbrahamArcade Wholeness Enterprise LLC";
 const siteDescription =
-  "AWE Consulting coordinates STEM knowledge transfer, graduate research development, institutional partnerships and cultural exchange across Nigeria and West Africa.";
+  "AWE Consulting coordinates STEM knowledge transfer, graduate research development, institutional partnerships and cultural exchange across Nigeria and West Africa, including advanced skills training that helps agencies and companies work more efficiently.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     siteName,
     images: [
       {
-        url: "/assets/img/logo.jpeg",
-        width: 1122,
-        height: 272,
+        url: "/assets/img/awe-consulting-logo.png",
+        width: 1513,
+        height: 293,
         alt: "AWE Consulting, AbrahamArcade Wholeness Enterprise logo",
       },
     ],
@@ -54,9 +54,8 @@ const structuredData = {
       name: siteName,
       alternateName: "AWE Consulting",
       url: `${siteUrl}/`,
-      logo: `${siteUrl}/assets/img/logo.jpeg`,
-      description:
-        "AWE Consulting coordinates STEM knowledge transfer, graduate research development, institutional partnerships and cultural exchange across Nigeria and West Africa.",
+      logo: `${siteUrl}/assets/img/awe-consulting-logo.png`,
+      description: siteDescription,
     },
     {
       "@type": "ProfessionalService",
@@ -68,9 +67,14 @@ const structuredData = {
       },
       areaServed: ["United States", "Nigeria", "West Africa"],
       serviceType: [
-        "STEM knowledge-transfer program development",
+        "STEM knowledge-transfer programme development",
         "Graduate research development consulting",
         "Cultural and institutional exchange coordination",
+        "Artificial intelligence capability training",
+        "Cybersecurity readiness training",
+        "Digital workflow and process improvement training",
+        "Workforce upskilling for agencies and companies",
+        "Institutional partnership coordination",
       ],
     },
   ],

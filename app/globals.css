@@ -451,6 +451,16 @@ li {
   margin-bottom: 0;
 }
 
+.section-note {
+  border-left: 2px solid var(--awe-red);
+  color: var(--awe-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 2rem 0 0;
+  max-width: 46rem;
+  padding-left: 1rem;
+}
+
 .program-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
