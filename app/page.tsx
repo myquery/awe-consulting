@@ -62,9 +62,9 @@ const audiences: Audience[] = [
       "Educational programming designed for measurable, reportable human capital outcomes.",
   },
   {
-    title: "Corporations",
+    title: "Companies",
     description:
-      "Talent pipelines, applied research collaborations and regional technical partnerships.",
+      "Workforce upskilling, digital workflows, process improvement and regional technical partnerships that help teams operate efficiently.",
   },
   {
     title: "International Partners",
@@ -74,7 +74,7 @@ const audiences: Audience[] = [
   {
     title: "Government Bodies",
     description:
-      "Policy-aligned STEM capacity programmes at state and federal level.",
+      "Policy-aligned STEM capacity programmes at state and federal level, including advanced skills training for stronger public-sector delivery.",
   },
 ];
 
@@ -82,8 +82,9 @@ const trustItems = [
   "Universities",
   "Research institutes",
   "Development agencies",
-  "Corporations",
+  "Companies",
   "International partners",
+  "Nigerian agencies",
 ];
 
 const processSteps: ProcessStep[] = [
@@ -183,8 +184,8 @@ export default function HomePage() {
                 />
                 <div className="hero-feature-card">
                   <p>
-                    Institutional capacity building for universities and
-                    research centres across Nigeria and West Africa.
+                    Institutional capacity building for universities, agencies
+                    and research centres across Nigeria and West Africa.
                   </p>
                 </div>
               </div>
@@ -229,6 +230,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="section-note">
+            For Nigerian agencies and companies, this capacity-building work can
+            include artificial intelligence, cybersecurity, data systems, digital
+            workflows, process improvement and other practical skills that make
+            teams more efficient.
+          </p>
         </div>
       </section>
 
@@ -341,12 +348,14 @@ export default function HomePage() {
                 Establish your <span>global footprint</span>
               </h2>
               <p>
-                Tell us about your institution and the capability you want to
-                build. We will respond with a proposed scope and next steps.
+                Tell us about your institution, agency or team and the
+                capability you want to build. We will respond with a proposed
+                scope and next steps.
               </p>
-              <div className="contact-list"><span>6439 Union CE, Glen Burnie MD, 21061, USA</span>
-                <a href="mailto:partnerships@awe-consulting.org">
-                  partnerships@awe-consulting.org
+              <div className="contact-list">
+                <span>6439 Union CE, Glen Burnie MD, 21061, USA</span>
+                <a href="mailto:partnerships@abrahamarcadeconsulting.org">
+                  partnerships@abrahamarcadeconsulting.org
                 </a>
                 <span>Lagos, Nigeria | London, UK</span>
               </div>
